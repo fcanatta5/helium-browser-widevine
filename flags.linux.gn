@@ -1,0 +1,33 @@
+is_official_build=true
+symbol_level=0
+disable_fieldtrial_testing_config=true
+blink_enable_generated_code_formatting=false
+blink_symbol_level=0
+ffmpeg_branding="Chrome"
+proprietary_codecs=true
+fatal_linker_warnings=false
+rtc_use_pipewire=true
+is_clang=true
+is_debug=false
+use_kerberos=false
+use_sysroot=true
+use_vaapi=true
+use_system_libffi=false
+
+# DRM / Widevine / Netflix support
+# Enables Chromium's Encrypted Media Extensions key-system plumbing for
+# com.widevine.alpha. This only enables support in the browser build; it does
+# not ship Google's proprietary Widevine CDM binary.
+enable_widevine=true
+enable_library_cdms=true
+
+# Helium is not Chrome-branded and cannot redistribute Widevine here. Keep the
+# CDM unbundled by default; the wrapper and scripts can register a locally
+# installed WidevineCdm directory at runtime.
+bundle_widevine_cdm=false
+
+# Avoid build-time Widevine host-verification signing requirements for custom
+# non-Google builds. Linux loads Widevine through the startup hint file path.
+enable_cdm_host_verification=false
+ignore_missing_widevine_signing_cert=true
+
